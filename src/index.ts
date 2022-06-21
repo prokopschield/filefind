@@ -45,7 +45,7 @@ export async function main(flags: Flags = argv) {
     const cli_options = flags.expect(
         ['regexp', 'directory', 'files_only', 'dirs_only'],
         {
-            directory: '/',
+            directory: '.',
         }
     );
 
@@ -57,5 +57,5 @@ export async function main(flags: Flags = argv) {
         onlyFiles: !!cli_options.files_only,
     };
 
-    process(cli_options.directory || '/', options);
+    process(cli_options.directory || '.', options);
 }
